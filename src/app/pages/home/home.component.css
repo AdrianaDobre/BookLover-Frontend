@@ -1,0 +1,29 @@
+.space{
+  padding-left: 70px;
+}
+
+.buttons{
+  padding-top: 25px;
+  padding-right: 50px;
+}
+
+h2{
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 130px;
+}
+
+.container {
+  text-align: center;
+  display: table;
+  vertical-align: middle;
+  width: 50%;
+  background-color: rgba(182,162,157, 0.8);
+  /*background-color: rgba(248,233,224, 0.8);*/
+  border-radius: 50px;
+  font-weight: bold;
+}
+.vertical-center-row {
+  display: table-cell;
+  vertical-align: middle;
+}
