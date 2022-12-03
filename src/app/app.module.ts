@@ -7,6 +7,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

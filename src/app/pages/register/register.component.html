@@ -1,1 +1,15 @@
-<p>register works!</p>
+<h2>Register</h2>
+<div class="container">
+  <form [formGroup]="registerForm" (ngSubmit)="doRegister()">
+    <input formControlName="email" class="form-control" placeholder="Email"
+           [ngClass]="registerForm.controls['email'].errors ? 'is-invalid' : ''"/>
+    <input formControlName="password" class="form-control" placeholder="Password" type="password"
+           [ngClass]="registerForm.controls['password'].errors ? 'is-invalid' : ''"/>
+
+    <input formControlName="firstName" class="form-control" placeholder="First Name"/>
+    <input formControlName="lastName" class="form-control" placeholder="Last Name"/>
+
+    <button type="submit" [disabled]="registerForm.status === 'INVALID'" class="btn btn-light float-end">Create account</button>
+  </form>
+  <button class="btn btn-light" (click)="goToLogin()">Login</button>
+</div>
