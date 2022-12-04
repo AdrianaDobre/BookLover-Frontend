@@ -1,1 +1,8 @@
-<p>login works!</p>
+<h2>Login</h2>
+<div class = "container">
+  <input class="form-control" placeholder="Email" [(ngModel)]="user.email" />
+  <input class="form-control" placeholder="Password" type="password" [(ngModel)]="user.password"/>
+  <button class="btn btn-light" (click)="doLogin()">Login</button>
+  <button class="btn btn-light float-end" (click)="goToRegister()">Register</button>
+  <div class="alert alert-danger" *ngIf="error">{{ error }}</div>
+</div>

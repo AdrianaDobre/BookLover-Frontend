@@ -1,0 +1,25 @@
+.container{
+  width: 30%;
+}
+
+.form-control{
+  background-color: rgba(182,162,157, 1);
+  border-radius: 25px;
+}
+
+h2{
+  padding-top: 12%;
+  padding-bottom: 40px;
+  text-align: center;
+}
+
+input{
+  margin-top: 5px;
+}
+.btn{
+  margin-top: 40px;
+}
+
+.alert{
+  margin-top: 20px;
+}
