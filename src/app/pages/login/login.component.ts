@@ -43,4 +43,8 @@ export class LoginComponent implements OnInit{
   goToRegister() {
     this.router.navigate([AppRoutes.REGISTER]);
   }
+
+  onHomeClick() {
+    this.router.navigate([AppRoutes.HOME]);
+  }
 }

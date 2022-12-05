@@ -23,3 +23,8 @@ input{
 .alert{
   margin-top: 20px;
 }
+
+.d-flex{
+  padding-top: 20px;
+  padding-right: 20px;
+}
