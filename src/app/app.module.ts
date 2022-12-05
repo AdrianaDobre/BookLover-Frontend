@@ -8,6 +8,9 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from "@angular/common/http";
+import { AuthInterceptor } from './services/authConfig/authconfig.interceptor';
+import {AuthService} from "./services/auth/auth.service";
 
 @NgModule({
   declarations: [
@@ -21,9 +24,16 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true
+    },
+    AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
