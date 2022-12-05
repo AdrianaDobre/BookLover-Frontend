@@ -29,13 +29,12 @@ export class LoginComponent implements OnInit{
         email: this.user.email,
         password: this.user.password
       }).subscribe((loginToken: HttpResponse<string>) => {
-          console.log(loginToken.body);
           if (typeof loginToken.body === "string") {
             window.localStorage.setItem('token', loginToken.body);
           }
           this.router.navigate([AppRoutes.HOME]);
         },
-        (error) => { this.error = 'Wrong email or password'});
+        (error) => {this.error = 'Wrong email or password'});
     } else {
       this.error = 'Enter your email and password';
     }

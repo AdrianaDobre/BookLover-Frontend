@@ -12,9 +12,6 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   login(credentials: Credentials): Observable<HttpResponse<string>> {
-    console.log(1)
-    console.log(credentials.password)
-    console.log(credentials.email)
     return this.http
       .post<string>(this.authUrl + '/auth', credentials, {
         headers: new HttpHeaders({
