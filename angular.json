@@ -63,7 +63,8 @@
               "browserTarget": "BookLover-Frontend:build:production"
             },
             "development": {
-              "browserTarget": "BookLover-Frontend:build:development"
+              "browserTarget": "BookLover-Frontend:build:development",
+              "proxyConfig": "src/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
