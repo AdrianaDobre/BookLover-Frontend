@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit{
           if (typeof loginToken.body === "string") {
             window.localStorage.setItem('token', loginToken.body);
           }
-          this.router.navigate([AppRoutes.HOME]);
+          this.router.navigate([AppRoutes.BOOKS]);
         },
         (error) => {this.error = 'Wrong email or password'});
     } else {
