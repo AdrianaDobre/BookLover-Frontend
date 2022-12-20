@@ -3,5 +3,5 @@ export interface Book {
   author: string,
   category: string,
   description: string,
-  avarageRating: number
+  averageRating: number
 }

@@ -9,10 +9,13 @@ import { RegisterComponent } from './pages/register/register.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from "@angular/common/http";
-import { AuthInterceptor } from './services/authConfig/authconfig.interceptor';
-import {AuthService} from "./services/auth/auth.service";
+import { AuthInterceptor } from './services/authconfig.interceptor';
+import {AuthService} from "./services/auth.service";
 import {MatIconModule} from '@angular/material/icon';
 import { BooksComponent } from './pages/books/books.component';
+import { BookDetailsComponent } from './pages/book-details/book-details.component';
+import {DatePipe} from "@angular/common";
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,9 @@ import { BooksComponent } from './pages/books/books.component';
     HomeComponent,
     LoginComponent,
     RegisterComponent,
-    BooksComponent
+    BooksComponent,
+    BookDetailsComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +42,8 @@ import { BooksComponent } from './pages/books/books.component';
     useClass: AuthInterceptor,
     multi: true
     },
-    AuthService],
+    AuthService,
+    DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

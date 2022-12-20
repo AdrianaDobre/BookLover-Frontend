@@ -1,0 +1,30 @@
+.bookDetails{
+  margin-left: 120px;
+}
+
+.image{
+  text-align: center;
+  background-color:transparent;
+}
+
+.btn{
+  margin-top: 15px;
+}
+
+.book{
+  border: 0 !important;
+}
+
+.reviewDetails{
+  width: 80%;
+  margin-left: 150px;
+}
+
+.review{
+  background-color: rgba(136,129,135, 0.8);
+  margin-top: 15px;
+}
+
+.card-header{
+  background-color: rgba(222,189,175,0.4)
+}

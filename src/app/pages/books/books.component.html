@@ -13,7 +13,7 @@
               <div class="card-body">
                 <h5 class="card-title">{{books!.at(i)!.title}}</h5>
                 <p class="card-text">{{books!.at(i)!.category}}</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <a class="btn btn-primary" (click)="goToBook(books!.at(i)!.title)">Go somewhere</a>
               </div>
             </div>
       </ng-container>
