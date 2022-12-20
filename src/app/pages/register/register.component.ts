@@ -25,7 +25,6 @@ export class RegisterComponent implements OnInit{
   }
 
   doRegister() {
-    console.log(this.registerForm);
     this.registerService.doRegistration({
       email: (this.registerForm.get('email') as FormControl).value,
       password: (this.registerForm.get('password') as FormControl).value,

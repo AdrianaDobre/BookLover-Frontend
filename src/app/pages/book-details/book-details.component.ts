@@ -12,20 +12,19 @@ import {DatePipe} from "@angular/common";
 })
 export class BookDetailsComponent implements OnInit{
   public book!: Book;
-  public bookReviews!: Review[];
+  public bookReviews: Review[] = [];
   constructor(private activatedRoute: ActivatedRoute, private bookDetailsService: BookDetailsService,private datePipe:DatePipe) {}
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((param) => {
-      this.getBookDetailsByTitle(param['title']);
       this.getReviewsDetailsByTitle(param['title']);
+      this.getBookDetailsByTitle(param['title']);
     })
   }
 
   public getBookDetailsByTitle(title: string){
     this.bookDetailsService.getBookByTitle(title).subscribe(result => {
       this.book = result;
-      console.log(result);
     });
   }
   public getReviewsDetailsByTitle(title: string){
@@ -38,4 +37,7 @@ export class BookDetailsComponent implements OnInit{
     return this.datePipe.transform(date, "yyyy-MM-dd HH:mm:ss")
   }
 
+  public numberOfReviews(): number{
+    return this.bookReviews.length;
+  }
 }
