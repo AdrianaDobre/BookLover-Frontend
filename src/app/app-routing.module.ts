@@ -4,12 +4,14 @@ import {LoginComponent} from "./pages/login/login.component";
 import {HomeComponent} from "./pages/home/home.component";
 import {RegisterComponent} from "./pages/register/register.component";
 import {BooksComponent} from "./pages/books/books.component";
+import {BookDetailsComponent} from "./pages/book-details/book-details.component";
 
 export enum AppRoutes{
   HOME='home',
   LOGIN='login',
   REGISTER='register',
-  BOOKS = 'books'
+  BOOKS = 'books',
+  BOOK = 'book/'
 
 }
 const routes: Routes = [
@@ -17,7 +19,8 @@ const routes: Routes = [
   {path: AppRoutes.HOME,component: HomeComponent},
   {path: AppRoutes.LOGIN, component: LoginComponent},
   {path: AppRoutes.REGISTER, component: RegisterComponent},
-  {path: AppRoutes.BOOKS, component: BooksComponent}
+  {path: AppRoutes.BOOKS, component: BooksComponent},
+  {path: AppRoutes.BOOK+':title', component: BookDetailsComponent},
 ];
 
 @NgModule({

@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {AppRoutes} from "../../app-routing.module";
 import {Router} from "@angular/router";
 import {Book} from "../../interfaces/book";
-import {BooksService} from "../../services/books/books.service";
+import {BooksService} from "../../services/books.service";
 
 @Component({
   selector: 'app-books',
@@ -25,4 +25,7 @@ export class BooksComponent implements OnInit{
     this.router.navigate([AppRoutes.HOME]);
   }
 
+  goToBook(title: string) {
+    this.router.navigate([AppRoutes.BOOK+title]);
+  }
 }
