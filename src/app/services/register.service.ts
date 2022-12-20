@@ -11,7 +11,6 @@ export class RegisterService {
   constructor(private http: HttpClient) { }
 
   doRegistration(user:User):Observable<HttpResponse<string>> {
-    // console.log(user);
     return this.http.post<string>("basePath/register", {
       "email": user.email,
       "password": user.password,

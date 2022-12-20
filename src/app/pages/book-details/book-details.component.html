@@ -13,8 +13,8 @@
       <div class="card-body">
         <h3 class="card-title">{{book.title}}</h3>
         <h5 class="card-text author">{{book.author}}</h5>
-        <p class="card-text rating" *ngIf="bookReviews.length !== 0">Rating: {{book.averageRating}}/5, {{bookReviews.length}} ratings</p>
-        <p class="card-text rating" *ngIf="bookReviews.length === 0">Rating: No reviews yet</p>
+        <p class="card-text rating" *ngIf="numberOfReviews() !== 0">Rating: {{book.averageRating}}/5, {{numberOfReviews()}} ratings</p>
+        <p class="card-text rating" *ngIf="numberOfReviews() === 0">Rating: No reviews yet</p>
         <p class="card-text categories">{{book.category}}</p>
         <p class="card-text description">{{book.description}}</p>
       </div>
