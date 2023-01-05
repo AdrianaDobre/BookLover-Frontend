@@ -1,17 +1,4 @@
 <div class="body">
   <h2>Meet your favorite next book</h2>
-  <div class = "container">
-    <div *ngIf="books" class="row">
-      <ng-container *ngFor="let book of books; let i = index">
-            <div class="col-4 card" style="width: 16rem;">
-              <img class="card-img-top" src="assets/images/{{books!.at(i)!.title}}.jpg" style="width: 290px; height: 400px" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">{{books!.at(i)!.title}}</h5>
-                <p class="card-text">{{books!.at(i)!.category}}</p>
-                <a class="btn btn-primary" (click)="goToBook(books!.at(i)!.title)">Go somewhere</a>
-              </div>
-            </div>
-      </ng-container>
-    </div>
-  </div>
+  <app-cards [allBooks] = "books" (onGoToBook)="goToBook($event)"></app-cards>
 </div>

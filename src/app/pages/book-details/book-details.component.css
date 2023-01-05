@@ -29,3 +29,9 @@
 .card-header{
   background-color: rgba(222,189,175,0.4)
 }
+
+.btn-outline-dark{
+  margin: 0;
+  width: 160px;
+  padding: 5px;
+}

@@ -40,4 +40,11 @@ export class BookDetailsComponent implements OnInit{
   public numberOfReviews(): number{
     return this.bookReviews.length;
   }
+
+  public deleteReview(review:Review){
+    this.bookDetailsService.deleteReview(review).subscribe();
+    this.bookDetailsService.getReviewsByTitle(review.title).subscribe(result => {
+      this.bookReviews = result;
+    });
+  }
 }

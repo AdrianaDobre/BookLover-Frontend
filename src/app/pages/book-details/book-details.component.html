@@ -25,7 +25,16 @@
   <ng-container *ngFor="let review of bookReviews; let i = index">
     <div class="card review">
       <div class="card-header">
-        {{review.email}}
+        <div class="row">
+          <div class="col">
+            <div class="header"
+                    style="text-align: start">{{review.email}}</div>
+          </div>
+          <div class="col" *ngIf="review.belongsToUser">
+            <div class="header"
+                    style="text-align: end"><button type="button" class="btn btn-outline-dark" (click)="deleteReview(review)">Delete review</button></div>
+          </div>
+        </div>
       </div>
       <div class="card-body">
         <blockquote class="blockquote mb-0">

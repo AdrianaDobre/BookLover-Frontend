@@ -16,6 +16,7 @@ import { BooksComponent } from './pages/books/books.component';
 import { BookDetailsComponent } from './pages/book-details/book-details.component';
 import {DatePipe} from "@angular/common";
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { CardsComponent } from './components/cards/cards.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     RegisterComponent,
     BooksComponent,
     BookDetailsComponent,
-    NavbarComponent
+    NavbarComponent,
+    CardsComponent
   ],
   imports: [
     BrowserModule,

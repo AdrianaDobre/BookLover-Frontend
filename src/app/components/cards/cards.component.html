@@ -1,0 +1,14 @@
+<div class = "container">
+  <div *ngIf="allBooks" class="row">
+    <ng-container *ngFor="let book of allBooks; let i = index">
+      <div class="col-4 card" style="width: 16rem;">
+        <img class="card-img-top" src="assets/images/{{allBooks!.at(i)!.title}}.jpg" style="width: 290px; height: 400px" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{allBooks!.at(i)!.title}}</h5>
+          <p class="card-text">{{allBooks!.at(i)!.category}}</p>
+          <a class="btn btn-primary" (click)="goToBook(allBooks!.at(i)!.title)">Go somewhere</a>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>
