@@ -4,4 +4,5 @@ export interface Review {
   reviewRating: number;
   email: string;
   title: string;
+  belongsToUser: boolean;
 }
