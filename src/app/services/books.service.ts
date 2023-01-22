@@ -13,4 +13,8 @@ export class BooksService {
   getBooks(): Observable<[Book]> {
     return this.http.get<[Book]>('basePath/book/getAllBooks');
   }
+
+  getBooksReviewed(): Observable<[Book]> {
+    return this.http.get<[Book]>('basePath/book/getAllReviewedByEmail');
+  }
 }

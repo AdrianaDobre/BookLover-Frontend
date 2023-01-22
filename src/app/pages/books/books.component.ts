@@ -21,10 +21,6 @@ export class BooksComponent implements OnInit{
     })
   }
 
-  onHomeClick() {
-    this.router.navigate([AppRoutes.HOME]);
-  }
-
   goToBook(title: string) {
     this.router.navigate([AppRoutes.BOOK+title]);
   }

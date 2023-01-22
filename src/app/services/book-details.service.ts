@@ -25,20 +25,6 @@ export class BookDetailsService {
     if (date == null){
       date = '';
     }
-    // let options = {
-    //   "reviewDate": review.reviewDate,
-    //   "comment": review.comment,
-    //   "reviewRating": review.reviewRating,
-    //   "email": review.email,
-    //   "title": review.title
-    // }
-    // et httpParams = new HttpParams();
-    // httpParams.set('reviewDate', date);
-    // httpParams.set('comment', review.comment);
-    // httpParams.set('reviewRating', review.reviewRating);
-    // httpParams.set('email', review.email);
-    // httpParams.set('title', review.title);
-    // let options = { params: httpParams };l
 
     const options = {
       headers: new HttpHeaders({
