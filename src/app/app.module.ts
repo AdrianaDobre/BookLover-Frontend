@@ -18,6 +18,9 @@ import {DatePipe} from "@angular/common";
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { CardsComponent } from './components/cards/cards.component';
 import { BooksReviewedComponent } from './pages/books-reviewed/books-reviewed.component';
+import {MatButtonModule} from "@angular/material/button";
+import { AddReviewComponent } from './pages/add-review/add-review.component';
+import {MatExpansionModule} from "@angular/material/expansion";
 
 @NgModule({
   declarations: [
@@ -29,7 +32,8 @@ import { BooksReviewedComponent } from './pages/books-reviewed/books-reviewed.co
     BookDetailsComponent,
     NavbarComponent,
     CardsComponent,
-    BooksReviewedComponent
+    BooksReviewedComponent,
+    AddReviewComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,7 +42,9 @@ import { BooksReviewedComponent } from './pages/books-reviewed/books-reviewed.co
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MatIconModule
+    MatIconModule,
+    MatButtonModule,
+    MatExpansionModule
   ],
   providers: [
     {

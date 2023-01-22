@@ -4,7 +4,6 @@
       <div class="card-body">
         <img class="card-img-top" src="assets/images/{{book.title}}.jpg" style="width: 320px; height: 400px;"
              alt="Card image cap">
-        <a class="btn btn-light">Add review</a>
       </div>
     </div>
   </div>
@@ -13,13 +12,29 @@
       <div class="card-body">
         <h3 class="card-title">{{book.title}}</h3>
         <h5 class="card-text author">{{book.author}}</h5>
-        <p class="card-text rating" *ngIf="numberOfReviews() !== 0">Rating: {{book.averageRating}}/5, {{numberOfReviews()}} ratings</p>
+        <p class="card-text rating" *ngIf="numberOfReviews() !== 0">Rating: {{book.averageRating}}
+          /5, {{numberOfReviews()}} ratings</p>
         <p class="card-text rating" *ngIf="numberOfReviews() === 0">Rating: No reviews yet</p>
         <p class="card-text categories">{{book.category}}</p>
         <p class="card-text description">{{book.description}}</p>
       </div>
     </div>
   </div>
+</div>
+<div class="container addReview">
+  <mat-accordion>
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Add Review
+        </mat-panel-title>
+        <mat-panel-description>
+          Click here if you want to tell your opinion about this book
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <app-add-review [title] = "titleBook" (newReviewEvent)="addBookReview($event)"></app-add-review>
+    </mat-expansion-panel>
+  </mat-accordion>
 </div>
 <div *ngIf="bookReviews" class="container row reviewDetails">
   <ng-container *ngFor="let review of bookReviews; let i = index">
@@ -28,11 +43,13 @@
         <div class="row">
           <div class="col">
             <div class="header"
-                    style="text-align: start">{{review.email}}</div>
+                 style="text-align: start">{{review.email}}</div>
           </div>
           <div class="col" *ngIf="review.belongsToUser">
             <div class="header"
-                    style="text-align: end"><button type="button" class="btn btn-outline-dark" (click)="deleteReview(review)">Delete review</button></div>
+                 style="text-align: end">
+              <button type="button" class="btn btn-outline-dark" (click)="deleteReview(review)">Delete review</button>
+            </div>
           </div>
         </div>
       </div>
@@ -42,7 +59,8 @@
           <div class="row">
             <div class="col">
               <footer class="footer"
-                      style="text-align: start">{{review.reviewRating}}/5</footer>
+                      style="text-align: start">{{review.reviewRating}}/5
+              </footer>
             </div>
             <div class="col">
               <footer class="footer"
