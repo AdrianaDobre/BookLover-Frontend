@@ -19,6 +19,7 @@
 .reviewDetails{
   width: 80%;
   margin-left: 150px;
+  padding-bottom: 50px;
 }
 
 .review{
@@ -35,3 +36,15 @@
   width: 160px;
   padding: 5px;
 }
+
+.addReview{
+  width: 70%;
+}
+
+mat-expansion-panel{
+  background-color: rgba(136,129,135, 0.8);
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+

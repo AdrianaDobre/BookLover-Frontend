@@ -3,6 +3,7 @@ import {HttpClient, HttpHeaders, HttpResponse} from "@angular/common/http";
 import {Credentials} from "../interfaces/credentials";
 import {Observable} from "rxjs";
 import {Router} from "@angular/router";
+import {Review} from "../interfaces/review";
 
 @Injectable({
   providedIn: 'root'
@@ -42,5 +43,9 @@ export class AuthService {
   private tokenExpired(token: string) {
     const expiry = (JSON.parse(atob(token.split('.')[1]))).exp;
     return (Math.floor((new Date).getTime() / 1000)) >= expiry;
+  }
+
+  getEmail(): Observable<any> {
+    return this.http.get<string>('basePath/getEmail',{responseType: 'text' as 'json'});
   }
 }

@@ -23,7 +23,7 @@ const routes: Routes = [
   {path: AppRoutes.REGISTER, component: RegisterComponent},
   {path: AppRoutes.BOOKS, component: BooksComponent},
   {path: AppRoutes.BOOK+':title', component: BookDetailsComponent},
-  {path: AppRoutes.BOOKSREVIEWD, component: BooksReviewedComponent}
+  {path: AppRoutes.BOOKSREVIEWD, component: BooksReviewedComponent},
 ];
 
 @NgModule({

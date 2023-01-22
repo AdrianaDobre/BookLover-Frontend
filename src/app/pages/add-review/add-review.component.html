@@ -1,0 +1,27 @@
+<div class="review">
+  <h4>Write your opinion about {{title}}</h4>
+  <div class="container">
+    <form [formGroup]="reviewForm" (ngSubmit)="addReview()">
+      <input formControlName="comment" class="form-control" placeholder="Review" name="comment"
+             [ngClass]="reviewForm.controls['comment'].errors ? 'is-invalid' : ''"/>
+      <div *ngIf="reviewForm.controls['comment'].errors?.['minlength']" class="message-error">
+        Review must be at least 3 characters long.
+      </div>
+      <input formControlName="reviewRating" class="form-control" placeholder="Rating"
+             [ngClass]="reviewForm.controls['reviewRating'].errors ? 'is-invalid' : ''"/>
+      <div *ngIf="reviewForm.controls['reviewRating'].errors?.['min']" class="message-error">
+        Rating must be between 0 and 5.
+      </div>
+      <div *ngIf="reviewForm.controls['reviewRating'].errors?.['max']" class="message-error">
+        Rating must be between 0 and 5.
+      </div>
+      <div *ngIf="reviewForm.controls['reviewRating'].errors?.['pattern']" class="message-error">
+        Rating must be a number.
+      </div>
+    </form>
+  </div>
+  <div class="buttons">
+    <button type="submit" [disabled]="reviewForm.status === 'INVALID'" class="btn btn-light float-end" (click)="addReview()">Add Review
+    </button>
+  </div>
+</div>
