@@ -4,20 +4,32 @@
     <form [formGroup]="reviewForm" (ngSubmit)="addReview()">
       <input formControlName="comment" class="form-control" placeholder="Review" name="comment"
              [ngClass]="reviewForm.controls['comment'].errors ? 'is-invalid' : ''"/>
-      <div *ngIf="reviewForm.controls['comment'].errors?.['minlength']" class="message-error">
+      <small class="text-danger" style="font-size: 15px"
+             *ngIf="reviewForm.controls['comment'].errors?.['required'] && reviewForm.controls['comment'].touched">
+        Review is required.
+      </small>
+      <small class="text-danger" style="font-size: 15px"
+             *ngIf="reviewForm.controls['comment'].errors?.['minlength']">
         Review must be at least 3 characters long.
-      </div>
+      </small>
       <input formControlName="reviewRating" class="form-control" placeholder="Rating"
              [ngClass]="reviewForm.controls['reviewRating'].errors ? 'is-invalid' : ''"/>
-      <div *ngIf="reviewForm.controls['reviewRating'].errors?.['min']" class="message-error">
+      <small class="text-danger" style="font-size: 15px"
+             *ngIf="reviewForm.controls['reviewRating'].errors?.['min']">
         Rating must be between 0 and 5.
-      </div>
-      <div *ngIf="reviewForm.controls['reviewRating'].errors?.['max']" class="message-error">
+      </small>
+      <small class="text-danger" style="font-size: 15px"
+             *ngIf="reviewForm.controls['reviewRating'].errors?.['max']">
         Rating must be between 0 and 5.
-      </div>
-      <div *ngIf="reviewForm.controls['reviewRating'].errors?.['pattern']" class="message-error">
+      </small>
+      <small class="text-danger" style="font-size: 15px"
+             *ngIf="reviewForm.controls['reviewRating'].errors?.['pattern']">
         Rating must be a number.
-      </div>
+      </small>
+      <small class="text-danger" style="font-size: 15px"
+             *ngIf="reviewForm.controls['reviewRating'].errors?.['required'] && reviewForm.controls['reviewRating'].touched">
+        Rating is required.
+      </small>
     </form>
   </div>
   <div class="buttons">

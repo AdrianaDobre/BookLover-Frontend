@@ -48,4 +48,8 @@ export class AuthService {
   getEmail(): Observable<any> {
     return this.http.get<string>('basePath/getEmail',{responseType: 'text' as 'json'});
   }
+
+  getToken(): string | null {
+    return window.localStorage.getItem('token');
+  }
 }
