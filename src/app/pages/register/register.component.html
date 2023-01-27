@@ -3,11 +3,32 @@
   <form [formGroup]="registerForm" (ngSubmit)="doRegister()">
     <input formControlName="email" class="form-control" placeholder="Email"
            [ngClass]="registerForm.controls['email'].errors ? 'is-invalid' : ''"/>
+    <small class="text-danger" style="font-size: 15px;"
+           *ngIf="registerForm.controls['email'].errors?.['required'] && registerForm.controls['email'].touched">
+      Email is required.
+    </small>
+    <small class="text-danger" style="font-size: 15px" *ngIf="registerForm.controls['email'].errors?.['email']">
+      Invalid email address
+    </small>
     <input formControlName="password" class="form-control" placeholder="Password" type="password"
            [ngClass]="registerForm.controls['password'].errors ? 'is-invalid' : ''"/>
-
+    <small class="text-danger" style="font-size: 15px;"
+           *ngIf="registerForm.controls['password'].errors?.['required'] && registerForm.controls['password'].touched">
+      Password is required.
+    </small>
+    <small class="text-danger" style="font-size: 15px" *ngIf="registerForm.controls['password'].errors?.['minlength']">
+      Your password must be at least 8 characters long
+    </small>
     <input formControlName="firstName" class="form-control" placeholder="First Name"/>
+    <small class="text-danger" style="font-size: 15px"
+           *ngIf="registerForm.controls['firstName'].errors?.['required'] && registerForm.controls['firstName'].touched">
+      First Name is required
+    </small>
     <input formControlName="lastName" class="form-control" placeholder="Last Name"/>
+    <small class="text-danger" style="font-size: 15px"
+           *ngIf="registerForm.controls['lastName'].errors?.['required'] && registerForm.controls['lastName'].touched">
+      Last Name is required
+    </small>
 
     <button type="submit" [disabled]="registerForm.status === 'INVALID'" class="btn btn-light float-end">Create account</button>
   </form>

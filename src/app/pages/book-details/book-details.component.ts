@@ -29,7 +29,6 @@ export class BookDetailsComponent implements OnInit{
   public getBookDetailsByTitle(title: string){
     this.bookDetailsService.getBookByTitle(title).subscribe(result => {
       this.book = result;
-      console.log(this.book.averageRating);
     });
   }
   public getReviewsDetailsByTitle(title: string){
@@ -48,14 +47,16 @@ export class BookDetailsComponent implements OnInit{
 
   public deleteReview(review:Review){
     this.bookDetailsService.deleteReview(review).subscribe();
+    let sum: number = this.book.averageRating * this.bookReviews.length - Number(review.reviewRating);
     this.bookReviews = this.bookReviews.filter((reviewBook : Review) =>
       reviewBook != review
     )
+    this.book.averageRating = Number((sum / this.bookReviews.length).toPrecision(2));
   }
 
   public addBookReview(review: Review){
     let sum: number = this.book.averageRating * this.bookReviews.length + Number(review.reviewRating);
     this.bookReviews.push(review);
-    this.book.averageRating = sum/this.bookReviews.length;
+    this.book.averageRating = Number((sum / this.bookReviews.length).toPrecision(2));
   }
 }
